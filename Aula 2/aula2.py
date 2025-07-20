@@ -51,17 +51,19 @@ while loop:
     player1.y += player1_speed
     player2.y += player2_speed
 
-
+    if ball.x <= 0:
+        ball.x = 600
+      
+    
+    if ball.x >= 1280:
+        ball.x = 600
+    
     if ball.y <= 0:
         ball_dir_y *= -1
-    elif ball.y >= 720 - 15:
-        ball_dir_y *= -1
-
-    if ball.x <= 0:
-        ball_x = 600
-    elif ball.x >= 1280:
-        ball_x = 600
-
+    
+    if ball.y >= 720 - 15:
+        ball_dir_y *= 1
+      
     ball.x = ball_dir_x
     ball.y = ball_dir_y
 
